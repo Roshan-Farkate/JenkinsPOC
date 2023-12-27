@@ -3,10 +3,9 @@ import axios from 'axios';
 
 const UserForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    address: '',
-    companyName: '',
+    name: '',
+    city: '',
+    company: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,10 +19,9 @@ const UserForm: React.FC = () => {
     try {
       await axios.post('http://localhost:8090/StudentDetails-0.0.1-SNAPSHOT/saveDetails', formData);
       setFormData({
-        firstName: '',
-        lastName: '',
-        address: '',
-        companyName: '',
+         name: '',
+    city: '',
+    company: '',
       });
 
     } catch (error) {
@@ -39,15 +37,6 @@ const UserForm: React.FC = () => {
           type="text"
           name="firstName"
           value={formData.firstName}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
           onChange={handleChange}
         />
       </div>
