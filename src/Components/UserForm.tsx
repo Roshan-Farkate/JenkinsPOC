@@ -18,7 +18,7 @@ const UserForm: React.FC = () => {
     e.preventDefault();
 
     try {
-      await axios.post('/api/saveUserData', formData);
+      await axios.post('http://localhost:8090/saveDetails', formData);
       setFormData({
         firstName: '',
         lastName: '',
