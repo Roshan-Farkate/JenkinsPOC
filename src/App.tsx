@@ -1,35 +1,19 @@
 import React, { useState } from "react";
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import IncDec from "./Components/IncDec";
+import UserForm from "./Components/UserForm";
 
 
 function App() {
 
-  const [count, setCount] = useState(0); // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
-
-  function increment() {
-    //setCount(prevCount => prevCount+=1);
-    setCount(function (prevCount) {
-      return (prevCount += 1);
-    });
-  }
-
-  function decrement() {
-    setCount(function (prevCount) {
-      if (prevCount > 0) {
-        return (prevCount -= 1); 
-      } else {
-        return (prevCount = 0);
-      }
-    });
-  }
-
   return (
-    <div className="App">
-      <h1>{count}</h1>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/incDec" element={<IncDec/>}/>
+        <Route path="userForm" element={<UserForm/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
