@@ -35,8 +35,8 @@ const UserForm: React.FC = () => {
         <label>First Name:</label>
         <input
           type="text"
-          name="firstName"
-          value={formData.firstName}
+          name="name"
+          value={formData.name}
           onChange={handleChange}
         />
       </div>
@@ -44,8 +44,8 @@ const UserForm: React.FC = () => {
         <label>Address:</label>
         <input
           type="text"
-          name="address"
-          value={formData.address}
+          name="city"
+          value={formData.city}
           onChange={handleChange}
         />
       </div>
@@ -53,8 +53,8 @@ const UserForm: React.FC = () => {
         <label>Company Name:</label>
         <input
           type="text"
-          name="companyName"
-          value={formData.companyName}
+          name="company"
+          value={formData.company}
           onChange={handleChange}
         />
       </div>
