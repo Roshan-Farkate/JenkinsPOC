@@ -34,6 +34,7 @@ function GetData(): JSX.Element {
       <table style={{ border: '1px solid black', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
+            <th>Id</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Name</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>City</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Company</th>
@@ -43,6 +44,7 @@ function GetData(): JSX.Element {
         <tbody>
           {studentData.map((student) => (
             <tr key={student.id}>
+                  <td style={{ border: '1px solid black', padding: '8px' }}>{student.id}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.name}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.city}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.company}</td>
