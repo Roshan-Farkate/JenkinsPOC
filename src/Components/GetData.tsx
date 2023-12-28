@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 interface Student {
-  id: number;
+  studentId: number;
   name: string;
   city: string;
   company: string;
@@ -43,8 +43,8 @@ function GetData(): JSX.Element {
         </thead>
         <tbody>
           {studentData.map((student) => (
-            <tr key={student.id}>
-                  <td style={{ border: '1px solid black', padding: '8px' }}>{student.id}</td>
+            <tr key={student.studentId}>
+                  <td style={{ border: '1px solid black', padding: '8px' }}>{student.studentId}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.name}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.city}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{student.company}</td>
