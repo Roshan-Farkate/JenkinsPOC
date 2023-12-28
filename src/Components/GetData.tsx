@@ -34,7 +34,6 @@ function GetData(): JSX.Element {
       <table style={{ border: '1px solid black', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
-            <th>Id</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Name</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>City</th>
             <th style={{ border: '1px solid black', padding: '8px' }}>Company</th>
