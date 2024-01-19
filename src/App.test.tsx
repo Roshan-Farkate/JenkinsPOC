@@ -9,7 +9,7 @@ describe('MockTodo component', () => {
   it('should render MockTodo component', () => {
     render(
       <BrowserRouter>
-        <MockTodo />
+        <IncDec />
       </BrowserRouter>
     );
 
@@ -24,7 +24,7 @@ describe('MockTodo component', () => {
   it('should increment count when Increment button is clicked', () => {
     render(
       <BrowserRouter>
-        <MockTodo />
+        <IncDec />
       </BrowserRouter>
     );
 
@@ -38,7 +38,7 @@ describe('MockTodo component', () => {
   it('should decrement count when Decrement button is clicked and not go below 0', () => {
     render(
       <BrowserRouter>
-        <MockTodo />
+        <IncDec />
       </BrowserRouter>
     );
 
