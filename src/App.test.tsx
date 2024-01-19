@@ -1,92 +1,59 @@
-// App.test.js
+// app.test.tsx
 
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import IncDec from './Components/IncDec';
+import MockTodo from './path/to/MockTodo'; // Adjust the path accordingly
 import { BrowserRouter } from 'react-router-dom';
 
-// test('renders App component with initial count and buttons', () => {
-//   render(<App />);
-
-//   // Check if the initial count is rendered
-//   const initialCountElement = screen.getByText(/0/i);
-//   expect(initialCountElement).toBeInTheDocument();
-
-//   // Check if the Increment and Decrement buttons are rendered
-//   const incrementButton = screen.getByText(/Increment/i);
-//   const decrementButton = screen.getByText(/Decrement/i);
-//   expect(incrementButton).toBeInTheDocument();
-//   expect(decrementButton).toBeInTheDocument();
-// });
-
-// test('increments count when Increment button is clicked', () => {
-//   render(<App />);
-
-//   // Find the Increment button and click it
-//   const incrementButton = screen.getByText(/Increment/i);
-//   fireEvent.click(incrementButton);
-
-//   // Check if the count is updated after clicking Increment
-//   const updatedCountElement = screen.getByText(/1/i);
-//   expect(updatedCountElement).toBeInTheDocument();
-// });
-
-// test('decrements count when Decrement button is clicked', () => {
-//   render(<App />);
-
-//   // Find the Decrement button and click it
-//   const decrementButton = screen.getByText(/Decrement/i);
-//   fireEvent.click(decrementButton);
-
-//   // Check if the count is updated after clicking Decrement
-//   const updatedCountElement = screen.getByText(/0/i);
-//   expect(updatedCountElement).toBeInTheDocument();
-// });
-
-// test('does not allow count to go below zero', () => {
-//   render(<App />);
-
-//   // Find the Decrement button and click it multiple times
-//   const decrementButton = screen.getByText(/Decrement/i);
-//   fireEvent.click(decrementButton);
-//   fireEvent.click(decrementButton);
-
-//   // Check if the count stays at zero
-//   const zeroCountElement = screen.getByText(/0/i);
-//   expect(zeroCountElement).toBeInTheDocument();
-// });
-
-const MockTodo = () => {
-  return (
+describe('MockTodo component', () => {
+  it('should render MockTodo component', () => {
+    render(
       <BrowserRouter>
-          <IncDec />
+        <MockTodo />
       </BrowserRouter>
-  );
-};  
+    );
 
-it('should increment count when Increment button is clicked', () => {
-  render(<MockTodo />);
-  const incrementButton = screen.getByText(/Increment/i);
-  
-  fireEvent.click(incrementButton);
+    // Add assertions to ensure that the component renders correctly
+    const incrementButton = screen.getByText(/Increment/i);
+    const decrementButton = screen.getByText(/Decrement/i);
 
-  const countElement = screen.getByText(/1/); // Assuming count starts at 0
-  expect(countElement).toBeInTheDocument();
-}); 
+    expect(incrementButton).toBeInTheDocument();
+    expect(decrementButton).toBeInTheDocument();
+  });
 
-it('should decrement count when Decrement button is clicked and not go below 0', () => {
-  render(<MockTodo />);
-  const decrementButton = screen.getByText(/Decrement/i);
+  it('should increment count when Increment button is clicked', () => {
+    render(
+      <BrowserRouter>
+        <MockTodo />
+      </BrowserRouter>
+    );
 
-  fireEvent.click(decrementButton);
+    const incrementButton = screen.getByText(/Increment/i);
+    fireEvent.click(incrementButton);
 
-  // Use queryByText to get all elements with the text "0"
-  const countElements = screen.queryAllByText(/0/);
+    const countElement = screen.getByText(/1/); // Assuming count starts at 0
+    expect(countElement).toBeInTheDocument();
+  });
 
-  // Assert that there is at least one element with the text "0"
-  expect(countElements.length).toBeGreaterThanOrEqual(1);
+  it('should decrement count when Decrement button is clicked and not go below 0', () => {
+    render(
+      <BrowserRouter>
+        <MockTodo />
+      </BrowserRouter>
+    );
 
-  // Additional assertions can be made on each element if needed
-  countElements.forEach((countElement) => {
+    const decrementButton = screen.getByText(/Decrement/i);
+    fireEvent.click(decrementButton);
+
+    // Use queryByText to get all elements with the text "0"
+    const countElements = screen.queryAllByText(/0/);
+
+    // Assert that there is at least one element with the text "0"
+    expect(countElements.length).toBeGreaterThanOrEqual(1);
+
+    // Additional assertions can be made on each element if needed
+    countElements.forEach((countElement) => {
       expect(countElement).toBeInTheDocument();
+    });
   });
 });
