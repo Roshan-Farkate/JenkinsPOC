@@ -25,7 +25,7 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "testRegex": "src/app\\.test\\.tsx$"
+    "testMatch"": "src/app\\.test\\.tsx$"
   },
   "eslintConfig": {
     "extends": [
