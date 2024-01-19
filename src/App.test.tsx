@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import MockTodo from './path/to/MockTodo'; // Adjust the path accordingly
+import IncDec from './Components/IncDec'; // Adjust the path accordingly
 import { BrowserRouter } from 'react-router-dom';
 
 describe('MockTodo component', () => {
