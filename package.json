@@ -25,7 +25,7 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "testMatch": ["C:\ProgramData\Jenkins\.jenkins\workspace\JenkinsPOC\src\App.test.tsx"]
+    "testMatch": ["C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JenkinsPOC\\src\\App.test.tsx"]
   },
   "eslintConfig": {
     "extends": [
